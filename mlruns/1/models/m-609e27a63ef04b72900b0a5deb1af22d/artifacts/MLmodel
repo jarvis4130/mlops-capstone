@@ -1,0 +1,22 @@
+artifact_path: /workspaces/mlops-capstone/mlruns/1/models/m-609e27a63ef04b72900b0a5deb1af22d/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.1
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: ubj
+    xgb_version: 3.3.0
+mlflow_version: 3.14.0
+model_id: m-609e27a63ef04b72900b0a5deb1af22d
+model_size_bytes: 841116
+model_uuid: m-609e27a63ef04b72900b0a5deb1af22d
+prompts: null
+run_id: 449e6ea2d59f4481be96e057155e42fc
+utc_time_created: '2026-07-06 13:34:40.152457'
