@@ -6,8 +6,7 @@ import pickle
 import numpy as np
 from fastapi import FastAPI
 from pydantic import BaseModel
-import mlflow.xgboost
-import mlflow
+import xgboost as xgb
 
 from preprocess import FEATURES
 
@@ -15,9 +14,8 @@ app = FastAPI(title="House Price Prediction API")
 
 MODEL_DIR = "models"
 encoder = pickle.load(open(f"{MODEL_DIR}/encoder.pkl", "rb"))
-
-# Load model from MLflow registry
-model = mlflow.xgboost.load_model("models:/house-price-model/1")
+model = xgb.XGBRegressor()
+model.load_model(f"{MODEL_DIR}/model.json")
 
 class HouseFeatures(BaseModel):
     Area: float
