@@ -12,6 +12,9 @@ from preprocess import FEATURES
 
 app = FastAPI(title="House Price Prediction API")
 
+from prometheus_fastapi_instrumentator import Instrumentator
+Instrumentator().instrument(app).expose(app)
+
 MODEL_DIR = "models"
 encoder = pickle.load(open(f"{MODEL_DIR}/encoder.pkl", "rb"))
 model = xgb.XGBRegressor()

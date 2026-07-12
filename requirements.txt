@@ -8,3 +8,4 @@ uvicorn>=0.24.0
 evidently>=0.4.11
 python-dotenv>=1.0.0
 kaggle>=1.5.16
+prometheus-fastapi-instrumentator>=6.0.0
